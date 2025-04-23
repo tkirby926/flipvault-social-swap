@@ -178,7 +178,7 @@ const Index = () => {
 
       {/* Feature Grid */}
       <section className="w-full px-4 md:px-0 mb-16 flex flex-col items-center">
-        <h2 className="text-lg md:text-xl lg:text-2xl font-pressstart text-primary mb-7 mt-4 animate-slide-in-left">
+        <h2 className="text-lg md:text-xl lg:text-2xl font-pressstart text-[#1E90FF] mb-7 mt-4 animate-slide-in-left">
           Why Flipvault?
         </h2>
         <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-9 max-w-6xl w-full">
@@ -192,7 +192,7 @@ const Index = () => {
 
       {/* How it Works */}
       <section className="w-full max-w-5xl mx-auto mb-16 px-4">
-        <h2 className="text-lg md:text-xl lg:text-2xl font-pressstart text-accent mb-6 mt-3 animate-slide-in-right">
+        <h2 className="text-lg md:text-xl lg:text-2xl font-pressstart text-[#4DA6FF] mb-6 mt-3 animate-slide-in-right">
           How It Works
         </h2>
         <div className="grid md:grid-cols-2 gap-10">
@@ -226,7 +226,7 @@ const Index = () => {
 
       {/* FAQ */}
       <section className="w-full max-w-4xl mx-auto mb-20 px-4">
-        <h2 className="text-lg md:text-xl font-pressstart text-primary mb-5 animate-fade-up">
+        <h2 className="text-lg md:text-xl font-pressstart text-[#1E90FF] mb-5 animate-fade-up">
           FAQ
         </h2>
         <FAQAccordion items={faqsQA} />
