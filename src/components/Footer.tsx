@@ -1,30 +1,31 @@
 
-import { X, MessageSquare, Send, Linkedin } from "lucide-react";
+import { X, Send, Linkedin } from "lucide-react";
+import DiscordIcon from "./DiscordIcon";
 
 const socials = [
-  { 
-    label: "X", 
-    href: "https://x.com/flipvault", 
+  {
+    label: "X",
+    href: "https://x.com/flipvault",
     Icon: X,
-    iconClassName: "text-white" 
+    iconClassName: "text-white"
   },
-  { 
-    label: "Discord", 
-    href: "https://discord.gg/vbwmfABK", 
-    Icon: MessageSquare,
-    iconClassName: "text-[#5865F2]" 
+  {
+    label: "Discord",
+    href: "https://discord.gg/vbwmfABK",
+    Icon: DiscordIcon,
+    iconClassName: ""
   },
-  { 
-    label: "Telegram", 
-    href: "https://t.me/flipvault", 
+  {
+    label: "Telegram",
+    href: "https://t.me/flipvault",
     Icon: Send,
-    iconClassName: "text-[#229ED9]" 
+    iconClassName: "text-[#229ED9]"
   },
-  { 
-    label: "LinkedIn", 
-    href: "https://www.linkedin.com/company/flipvault", 
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/flipvault",
     Icon: Linkedin,
-    iconClassName: "text-[#0077b5]" 
+    iconClassName: "text-[#0077b5]"
   },
 ];
 
@@ -41,7 +42,7 @@ const Footer = () => (
           className={`
             flex items-center justify-center rounded-full p-[7px] shadow-xl border-2 border-black/10
             hover:scale-110 hover:shadow-2xl transition-transform duration-300
-            ${label === "X" ? "bg-black" : label === "Discord" ? "bg-white" : "bg-white"}
+            ${label === "X" ? "bg-black" : "bg-white"}
           `}
           style={{ width: 44, height: 44 }}
         >
