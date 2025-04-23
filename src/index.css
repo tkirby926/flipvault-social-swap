@@ -9,8 +9,8 @@
     --foreground: 0 0% 100%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-    --primary: 261 82% 64%;
-    --accent: 196 88% 54%;
+    --primary: 220 100% 40%;
+    --accent: 217 100% 45%;
     --radius: 0.5rem;
   }
 
@@ -34,7 +34,7 @@
   }
 
   ::selection {
-    background: #8B5CF6;
+    background: #0032cc;
     color: #fff;
   }
 }
