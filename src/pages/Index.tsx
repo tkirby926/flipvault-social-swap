@@ -1,4 +1,6 @@
-
+import React from 'react';
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import FeatureCard from "@/components/FeatureCard";
 import HowItWorksStep from "@/components/HowItWorksStep";
 import Footer from "@/components/Footer";
@@ -84,9 +86,7 @@ const faqs = [
 
 const Index = () => {
   return (
-    <div
-      className="font-pressstart min-h-screen w-full bg-black flex flex-col"
-    >
+    <div className="font-pressstart min-h-screen w-full bg-black flex flex-col">
       {/* Hero Section */}
       <header className="w-full pt-24 pb-8 flex flex-col items-center relative z-[1] animate-slide-down-fade">
         <h1 className="text-[2.2rem] md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-br from-accent to-primary text-transparent bg-clip-text text-shadow-retro drop-shadow text-center uppercase">
@@ -97,6 +97,18 @@ const Index = () => {
         </div>
         <div className="max-w-2xl text-[14px] md:text-lg text-accent text-center animate-fade-up font-pressstart bg-black/80 mt-2 px-3 py-2 rounded">
           A SocialFi B2B escrow SAAS designed for secure, cross-chain trading of tokenized assets and files, featuring live, real time trading capabilities.
+        </div>
+        
+        {/* New Go to Site Button */}
+        <div className="mt-6 animate-pop-in">
+          <Button 
+            size="lg" 
+            className="text-base font-bold bg-primary hover:bg-primary/90 transition-all duration-300 group"
+            onClick={() => window.location.href = 'https://app.flipvault.io'}
+          >
+            Go to Site 
+            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+          </Button>
         </div>
       </header>
 
