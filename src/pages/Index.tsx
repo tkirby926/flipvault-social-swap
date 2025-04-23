@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -150,14 +151,14 @@ const Index = () => {
           A SocialFi B2B escrow SAAS designed for secure, cross-chain trading of tokenized assets and files, featuring live, real time trading capabilities.
         </div>
         
-        {/* New Go to Site Button */}
+        {/* Updated Button Text */}
         <div className="mt-6 animate-pop-in">
           <Button 
             size="lg" 
             className="text-base font-bold bg-primary hover:bg-primary/90 transition-all duration-300 group"
             onClick={() => window.location.href = 'https://app.flipvault.io'}
           >
-            Go to Site 
+            Launch Platform 
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>

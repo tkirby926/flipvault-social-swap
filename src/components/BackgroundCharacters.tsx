@@ -29,7 +29,7 @@ const BackgroundCharacters = () => {
         top: `${5 + Math.floor(Math.random() * 90)}%`,
         left: `${5 + Math.floor(Math.random() * 90)}%`,
         rotate: `rotate(${Math.floor(Math.random() * 20 - 10)}deg)`,
-        size: `${Math.floor(16 + Math.random() * 10)}px` // Vary the size slightly
+        size: `${Math.floor(30 + Math.random() * 20)}px` // Increased size for better visibility
       });
     }
     setCharacterPositions(positions);
@@ -49,8 +49,8 @@ const BackgroundCharacters = () => {
             transform: position.rotate,
             width: position.size,
             height: position.size,
-            opacity: 0.15, // Slightly increased opacity for visibility
-            filter: 'brightness(0.9) contrast(1.2)', // Enhance visibility against black
+            opacity: 0.25, // Increased opacity for better visibility
+            filter: 'brightness(1) contrast(1.5)', // Enhanced visibility against black
           }}
         />
       ))}
