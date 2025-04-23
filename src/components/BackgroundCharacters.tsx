@@ -10,7 +10,7 @@ const BackgroundCharacters = () => {
     { src: "/lovable-uploads/9b00b85f-d6b8-4835-98f2-59a85954f70c.png", alt: "Raccoon character" }
   ];
 
-  // Create a fixed number of character positions
+  // Create fixed positions for characters alternating left and right
   const [characterPositions, setCharacterPositions] = useState<Array<{
     char: typeof characters[number],
     top: string,
@@ -20,18 +20,15 @@ const BackgroundCharacters = () => {
   }>>([]);
 
   useEffect(() => {
-    // Create 8 random character positions that are fixed
-    const positions = [];
-    for (let i = 0; i < 8; i++) {
-      const randomChar = characters[Math.floor(Math.random() * characters.length)];
-      positions.push({
-        char: randomChar,
-        top: `${5 + Math.floor(Math.random() * 90)}%`,
-        left: `${5 + Math.floor(Math.random() * 90)}%`,
-        rotate: `rotate(${Math.floor(Math.random() * 20 - 10)}deg)`,
-        size: `${Math.floor(80 + Math.random() * 50)}px` // Even larger size
-      });
-    }
+    const positions = characters.map((char, index) => ({
+      char,
+      // Alternate between left (10%) and right (75%) sides
+      left: index % 2 === 0 ? '10%' : '75%',
+      // Space characters vertically with 20% gaps
+      top: `${15 + (index * 20)}%`,
+      rotate: `rotate(${index % 2 === 0 ? -5 : 5}deg)`,
+      size: '150px' // Fixed larger size for all characters
+    }));
     setCharacterPositions(positions);
   }, []);
 
@@ -42,14 +39,14 @@ const BackgroundCharacters = () => {
           key={i}
           src={position.char.src}
           alt={position.char.alt}
-          className="absolute"
+          className="absolute transition-all duration-500"
           style={{
             top: position.top,
             left: position.left,
             transform: position.rotate,
             width: position.size,
             height: position.size,
-            opacity: 0.15, // Lower opacity to better blend with background
+            opacity: 0.15,
             filter: 'brightness(0.8) contrast(1.2) drop-shadow(0 0 5px rgba(255,255,255,0.2))',
           }}
         />
