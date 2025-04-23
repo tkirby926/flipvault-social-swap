@@ -20,7 +20,7 @@ const BackgroundCharacters = () => {
   }>>([]);
 
   useEffect(() => {
-    // Create 8 random character positions
+    // Create 8 random character positions that are fixed
     const positions = [];
     for (let i = 0; i < 8; i++) {
       const randomChar = characters[Math.floor(Math.random() * characters.length)];
@@ -29,14 +29,14 @@ const BackgroundCharacters = () => {
         top: `${5 + Math.floor(Math.random() * 90)}%`,
         left: `${5 + Math.floor(Math.random() * 90)}%`,
         rotate: `rotate(${Math.floor(Math.random() * 20 - 10)}deg)`,
-        size: `${Math.floor(50 + Math.random() * 30)}px` // Significantly increased size
+        size: `${Math.floor(80 + Math.random() * 50)}px` // Even larger size
       });
     }
     setCharacterPositions(positions);
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 5 }}>
+    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: -1 }}>
       {characterPositions.map((position, i) => (
         <img
           key={i}
@@ -49,8 +49,8 @@ const BackgroundCharacters = () => {
             transform: position.rotate,
             width: position.size,
             height: position.size,
-            opacity: 0.6, // Significantly increased opacity
-            filter: 'brightness(1.5) contrast(1.8) drop-shadow(0 0 8px rgba(255,255,255,0.3))', // Enhanced visibility
+            opacity: 0.15, // Lower opacity to better blend with background
+            filter: 'brightness(0.8) contrast(1.2) drop-shadow(0 0 5px rgba(255,255,255,0.2))',
           }}
         />
       ))}
