@@ -29,14 +29,14 @@ const BackgroundCharacters = () => {
         top: `${5 + Math.floor(Math.random() * 90)}%`,
         left: `${5 + Math.floor(Math.random() * 90)}%`,
         rotate: `rotate(${Math.floor(Math.random() * 20 - 10)}deg)`,
-        size: `${Math.floor(30 + Math.random() * 20)}px` // Increased size for better visibility
+        size: `${Math.floor(50 + Math.random() * 30)}px` // Significantly increased size
       });
     }
     setCharacterPositions(positions);
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 1 }}>
+    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 5 }}>
       {characterPositions.map((position, i) => (
         <img
           key={i}
@@ -49,8 +49,8 @@ const BackgroundCharacters = () => {
             transform: position.rotate,
             width: position.size,
             height: position.size,
-            opacity: 0.25, // Increased opacity for better visibility
-            filter: 'brightness(1) contrast(1.5)', // Enhanced visibility against black
+            opacity: 0.6, // Significantly increased opacity
+            filter: 'brightness(1.5) contrast(1.8) drop-shadow(0 0 8px rgba(255,255,255,0.3))', // Enhanced visibility
           }}
         />
       ))}
