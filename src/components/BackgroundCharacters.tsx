@@ -36,7 +36,7 @@ const BackgroundCharacters = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: -1 }}>
+    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 1 }}>
       {characterPositions.map((position, i) => (
         <img
           key={i}
