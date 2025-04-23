@@ -182,10 +182,8 @@ const Index = () => {
         </h2>
         <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-9 max-w-6xl w-full">
           {featureList.map((f, i) => (
-            <div key={i} className="animate-pop-in" style={{animationDelay: `${i * 0.14 + 0.3}s`}}>
-              <div className="min-h-[210px] flex flex-col"> {/* enforce uniform card height and flexible layout */}
-                <FeatureCard Icon={f.Icon} title={f.title} description={f.description} />
-              </div>
+            <div key={i} className="animate-pop-in h-full" style={{animationDelay: `${i * 0.14 + 0.3}s`}}>
+              <FeatureCard Icon={f.Icon} title={f.title} description={f.description} />
             </div>
           ))}
         </div>
