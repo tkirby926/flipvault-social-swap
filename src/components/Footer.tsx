@@ -1,9 +1,9 @@
 
-import { X, Discord, Send, Linkedin } from "lucide-react";
+import { Twitter, MessageSquare, Send, Linkedin } from "lucide-react";
 
 const socials = [
-  { label: "X", href: "https://x.com/flipvault", Icon: X },
-  { label: "Discord", href: "https://discord.gg/vbwmfABK", Icon: Discord },
+  { label: "X", href: "https://x.com/flipvault", Icon: Twitter },
+  { label: "Discord", href: "https://discord.gg/vbwmfABK", Icon: MessageSquare },
   { label: "Telegram", href: "https://t.me/flipvault", Icon: Send },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/flipvault", Icon: Linkedin },
 ];

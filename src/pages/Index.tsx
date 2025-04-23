@@ -7,7 +7,7 @@ import {
   ArrowsUpFromLine,
   Users,
   Coins,
-  Nfts,
+  Image,
 } from "lucide-react";
 
 const featureList = [
@@ -32,7 +32,7 @@ const featureList = [
     description: "Built on Aptos for fast, cost-effective transactions.",
   },
   {
-    Icon: Nfts,
+    Icon: Image,
     title: "Supports NFTs and crypto",
     description: "Seamlessly trade Aptos-based NFTs and fungible tokens in a single platform.",
   },
