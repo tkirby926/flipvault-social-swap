@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -144,10 +145,10 @@ const Index = () => {
           Welcome to Flipvault
         </h1>
         <div className="mt-4 mb-3 text-xl md:text-2xl font-bold text-white text-center animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-[#0032cc] w-fit px-3">
-          Peer-to-Peer Cross-Chain Barter Trading
+          Barter assets with friends and strangers across chains — just like old-school gaming, but powered by Web3
         </div>
         <div className="max-w-2xl text-[14px] md:text-lg text-[#4DA6FF] text-center animate-fade-up font-pressstart bg-black/80 mt-2 px-3 py-2 rounded">
-          Barter assets with friends and strangers across chains — just like old-school gaming, but powered by Web3.
+          Barter assets with friends and strangers across chains — just like old-school gaming, but powered by Web3
         </div>
         
         <div className="mt-6 animate-pop-in">
