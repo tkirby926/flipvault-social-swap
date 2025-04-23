@@ -1,22 +1,38 @@
 
 import * as React from "react";
 
-// A professionally recreated Discord "glyph" logo: elongated and clean silhouette
-const DiscordIcon = ({ size = 28, className = "", ...props }: React.SVGProps<SVGSVGElement> & { size?: number }) => (
-  <svg
+interface DiscordIconProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+  size?: number;
+  className?: string;
+}
+
+// Use a PNG for the Discord logo to match the "perfect" shape/look.
+// This img is styled to match the vector icons in spacing, alignment, and hover effects.
+const DiscordIcon = ({
+  size = 28,
+  className = "",
+  style,
+  ...props
+}: DiscordIconProps) => (
+  <img
+    src="/lovable-uploads/ab5a9bf2-e537-49e1-af36-af9eeb17e827.png"
+    alt="Discord logo"
     width={size}
     height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    aria-hidden="true"
-    className={className}
+    draggable={false}
+    className={`object-contain aspect-square select-none ${className}`}
+    style={{
+      width: size,
+      height: size,
+      // Match border radius with icon button container if needed:
+      borderRadius: "6px",
+      // Remove default image outlines:
+      outline: "none",
+      ...style,
+    }}
     {...props}
-  >
-    <path
-      d="M20.317 4.3698a19.7561 19.7561 0 0 0-4.843-1.4998.0741.0741 0 0 0-.0787.0371c-.211.3758-.4447.8666-.6091 1.2513-1.8383-.2764-3.6694-.2764-5.4844 0-.1644-.3965-.4098-.8755-.6226-1.2513a.077.077 0 0 0-.0788-.0371 19.7044 19.7044 0 0 0-4.843 1.4998.0699.0699 0 0 0-.0321.0276C1.5794 8.1601 1.0798 11.8133 1.4102 15.417a.0824.0824 0 0 0 .0312.0561c2.0528 1.5285 4.0423 2.4528 5.9929 3.0741a.0777.0777 0 0 0 .0084-.0137c.4624-.6335.8738-1.3011 1.2236-2.0022.0206-.0411-.0013-.0891-.0427-.1051-1.0782-.4095-2.1023-.9117-3.0831-1.4775a.077.077 0 0 1-.0076-.1276c.207-.1544.414-.3149.611-.4746a.0757.0757 0 0 1 .0789-.0107c6.4563 2.9488 13.4647 2.9488 19.8332 0a.0757.0757 0 0 1 .0789.0107c.197.1597.404.3202.611.4746a.077.077 0 0 1-.0066.1276 12.2986 12.2986 0 0 1-3.0852 1.4793c-.0414.0161-.0625.0642-.0419.1052.3551.6984.7665 1.3661 1.2236 2.0022a.0633.0633 0 0 0 .0084.0137c1.9508-.6213 3.9403-1.5456 5.9929-3.0741a.0799.0799 0 0 0 .0313-.0561c.3958-4.1049-.6601-7.7229-2.7945-10.9026a.062.062 0 0 0-.0321-.0277zM8.02 15.3312c-.9312 0-1.6996-.8557-1.6996-1.9165s.7512-1.9164 1.6996-1.9164c.9523 0 1.7194.8675 1.6996 1.9164 0 1.0608-.7512 1.9165-1.6996 1.9165zm7.9702 0c-.9311 0-1.6996-.8557-1.6996-1.9165s.7512-1.9164 1.6996-1.9164c.9523 0 1.7195.8675 1.6996 1.9164 0 1.0608-.7473 1.9165-1.6996 1.9165z"
-      fill="#23272A"
-    />
-  </svg>
+  />
 );
 
 export default DiscordIcon;
+
