@@ -5,6 +5,7 @@ import FeatureCard from "@/components/FeatureCard";
 import HowItWorksStep from "@/components/HowItWorksStep";
 import Footer from "@/components/Footer";
 import FAQAccordion from "@/components/FAQAccordion";
+import BackgroundCharacters from "@/components/BackgroundCharacters";
 import {
   ShieldCheck,
   ArrowsUpFromLine,
@@ -136,6 +137,7 @@ const faqsQA = [
 const Index = () => {
   return (
     <div className="font-pressstart min-h-screen w-full bg-black flex flex-col">
+      <BackgroundCharacters />
       {/* Hero Section */}
       <header className="w-full pt-24 pb-8 flex flex-col items-center relative z-[1] animate-slide-down-fade">
         <h1 className="text-[2.2rem] md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-br from-accent to-primary text-transparent bg-clip-text text-shadow-retro drop-shadow text-center uppercase">
