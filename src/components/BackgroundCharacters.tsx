@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const BackgroundCharacters = () => {
   const characters = [
@@ -10,18 +10,47 @@ const BackgroundCharacters = () => {
     { src: "/lovable-uploads/9b00b85f-d6b8-4835-98f2-59a85954f70c.png", alt: "Raccoon character" }
   ];
 
+  // Create a fixed number of character positions
+  const [characterPositions, setCharacterPositions] = useState<Array<{
+    char: typeof characters[number],
+    top: string,
+    left: string,
+    rotate: string,
+    size: string
+  }>>([]);
+
+  useEffect(() => {
+    // Create 8 random character positions
+    const positions = [];
+    for (let i = 0; i < 8; i++) {
+      const randomChar = characters[Math.floor(Math.random() * characters.length)];
+      positions.push({
+        char: randomChar,
+        top: `${5 + Math.floor(Math.random() * 90)}%`,
+        left: `${5 + Math.floor(Math.random() * 90)}%`,
+        rotate: `rotate(${Math.floor(Math.random() * 20 - 10)}deg)`,
+        size: `${Math.floor(16 + Math.random() * 10)}px` // Vary the size slightly
+      });
+    }
+    setCharacterPositions(positions);
+  }, []);
+
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: -1 }}>
-      {characters.map((char, i) => (
+      {characterPositions.map((position, i) => (
         <img
           key={i}
-          src={char.src}
-          alt={char.alt}
-          className="absolute opacity-10 w-16 h-16 object-contain"
+          src={position.char.src}
+          alt={position.char.alt}
+          className="absolute"
           style={{
-            top: `${15 + Math.random() * 70}%`,
-            left: `${5 + Math.random() * 90}%`,
-            transform: `rotate(${Math.random() * 20 - 10}deg)`,
+            top: position.top,
+            left: position.left,
+            transform: position.rotate,
+            width: position.size,
+            height: position.size,
+            opacity: 0.15, // Slightly increased opacity for visibility
+            filter: 'brightness(0.9) contrast(1.2)', // Enhance visibility against black
           }}
         />
       ))}
