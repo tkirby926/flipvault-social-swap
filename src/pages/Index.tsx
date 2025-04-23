@@ -85,29 +85,28 @@ const faqs = [
 const Index = () => {
   return (
     <div
-      className="font-inter min-h-screen w-full bg-gradient-to-br from-[#faffff] via-[#f2f4fe] to-[#e5e7fa] dark:from-[#232346] dark:via-[#181831] dark:to-[#1a1b2c] flex flex-col"
+      className="font-pressstart min-h-screen w-full bg-black flex flex-col"
     >
       {/* Hero Section */}
-      <header className="w-full pt-16 pb-8 flex flex-col items-center relative z-[1]">
-        <h1 className="text-[2.8rem] md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-primary to-[#6E59A5] drop-shadow-md text-center">
+      <header className="w-full pt-24 pb-8 flex flex-col items-center relative z-[1] animate-slide-down-fade">
+        <h1 className="text-[2.2rem] md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-br from-accent to-primary text-transparent bg-clip-text text-shadow-retro drop-shadow text-center uppercase">
           Welcome to Flipvault
         </h1>
-        <div className="mt-4 mb-3 text-2xl md:text-3xl font-semibold text-gray-800 dark:text-white text-center">
+        <div className="mt-4 mb-3 text-xl md:text-2xl font-bold text-white text-center animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-primary w-fit px-3">
           Peer-to-Peer Cross-Chain Barter Trading
         </div>
-        <div className="max-w-2xl text-lg md:text-xl text-gray-700 dark:text-gray-200 text-center">
+        <div className="max-w-2xl text-[14px] md:text-lg text-accent text-center animate-fade-up font-pressstart bg-black/80 mt-2 px-3 py-2 rounded">
           A SocialFi B2B escrow SAAS designed for secure, cross-chain trading of tokenized assets and files, featuring live, real time trading capabilities.
         </div>
       </header>
 
       {/* "Sayings" Section */}
-      <section className="w-full px-2 md:px-0 mb-10 flex flex-col items-center">
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl w-full">
+      <section className="w-full px-4 md:px-0 mb-12 flex flex-col items-center">
+        <div className="grid md:grid-cols-3 gap-7 max-w-5xl w-full">
           {sayings.map((s, i) => (
             <div
               key={i}
-              className="bg-white/70 dark:bg-white/10 rounded-2xl shadow p-6 text-lg font-medium text-center text-gray-900 dark:text-gray-100 backdrop-blur-md animate-fade-in"
-              style={{ animationDelay: `${i * 0.08 + 0.1}s` }}
+              className={`bg-white rounded-2xl shadow-xl p-6 text-base font-bold text-center text-accent drop-shadow-md animate-pop-in animation-delay-${i * 2 + 2}00`}
             >
               {s}
             </div>
@@ -116,21 +115,25 @@ const Index = () => {
       </section>
 
       {/* Feature Grid */}
-      <section className="w-full px-2 md:px-0 mb-20 flex flex-col items-center">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6 mt-2">
+      <section className="w-full px-4 md:px-0 mb-16 flex flex-col items-center">
+        <h2 className="text-lg md:text-xl lg:text-2xl font-pressstart text-primary mb-7 mt-4 animate-slide-in-left">
           Why Flipvault?
         </h2>
-        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-7 max-w-6xl w-full">
+        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-9 max-w-6xl w-full">
           {featureList.map((f, i) => (
-            <FeatureCard key={i} Icon={f.Icon} title={f.title} description={f.description} />
+            <div key={i} className="animate-pop-in" style={{animationDelay: `${i * 0.14 + 0.3}s`}}>
+              <FeatureCard Icon={f.Icon} title={f.title} description={f.description} />
+            </div>
           ))}
         </div>
       </section>
 
       {/* How it Works */}
-      <section className="w-full max-w-5xl mx-auto mb-20 px-2">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6 mt-2">How It Works</h2>
-        <div className="grid md:grid-cols-2 gap-8">
+      <section className="w-full max-w-5xl mx-auto mb-16 px-4">
+        <h2 className="text-lg md:text-xl lg:text-2xl font-pressstart text-accent mb-6 mt-3 animate-slide-in-right">
+          How It Works
+        </h2>
+        <div className="grid md:grid-cols-2 gap-10">
           {howItWorks.map(({ title, description }, i) => (
             <HowItWorksStep key={i} step={i + 1} title={title} description={description} />
           ))}
@@ -138,14 +141,16 @@ const Index = () => {
       </section>
 
       {/* FAQ */}
-      <section className="w-full max-w-4xl mx-auto mb-24 px-2">
-        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">FAQ</h2>
-        <ul className="space-y-2">
+      <section className="w-full max-w-4xl mx-auto mb-20 px-4">
+        <h2 className="text-lg md:text-xl font-pressstart text-primary mb-5 animate-fade-up">
+          FAQ
+        </h2>
+        <ul className="space-y-3">
           {faqs.map((q, i) => (
-            <li key={i} className="bg-white/50 dark:bg-white/5 rounded-lg shadow p-4 text-gray-800 dark:text-gray-100 text-base font-medium">{q}</li>
+            <li key={i} className="bg-white rounded-lg shadow p-4 text-gray-900 text-[12px] font-bold animate-fade-up" style={{animationDelay: `${i * 0.08}s`}}>{q}</li>
           ))}
         </ul>
-        <div className="text-xs text-gray-400 mt-3">Answers coming soon...</div>
+        <div className="text-xs text-gray-400 mt-4 font-pressstart">Answers coming soon...</div>
       </section>
 
       {/* Footer */}
