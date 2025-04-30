@@ -10,21 +10,57 @@ interface FAQAccordionProps {
 
 const FAQAccordion: React.FC<FAQAccordionProps> = ({ items }) => {
   const [openIdx, setOpenIdx] = React.useState<number | null>(null);
+  const [visibleItems, setVisibleItems] = React.useState<number[]>([]);
+  const itemRefs = React.useRef<(HTMLDivElement | null)[]>([]);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute("data-index"));
+            if (!isNaN(index) && !visibleItems.includes(index)) {
+              setVisibleItems(prev => [...prev, index]);
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    itemRefs.current.forEach((item) => {
+      if (item) observer.observe(item);
+    });
+
+    return () => {
+      itemRefs.current.forEach((item) => {
+        if (item) observer.unobserve(item);
+      });
+    };
+  }, [visibleItems]);
 
   return (
     <div className="space-y-3">
       {items.map((item, idx) => (
-        <div key={idx}>
+        <div 
+          key={idx}
+          ref={el => (itemRefs.current[idx] = el)}
+          data-index={idx}
+          className={`transition-all duration-1000 transform ${
+            visibleItems.includes(idx)
+              ? "opacity-100 translate-x-0"
+              : idx % 2 === 0
+                ? "opacity-0 -translate-x-20"
+                : "opacity-0 translate-x-20"
+          }`}
+          style={{ transitionDelay: `${idx * 100}ms` }}
+        >
           <button
             onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
             className={`w-full flex justify-between items-center bg-white rounded-lg shadow px-4 py-3 text-gray-900 font-bold text-[12px] outline-none focus-visible:ring-2 focus-visible:ring-primary transition-all relative group
-              ${openIdx === idx ? "shadow-lg ring-2 ring-primary scale-[1.03]" : "hover:shadow-md hover:scale-[1.02]"}
-              animate-slide-in-right`}
-            style={{
-              animationDelay: `${idx * 0.05 + 0.2}s`,
-              animationDuration: "0.6s",
-              animationFillMode: "both"
-            }}
+              ${openIdx === idx ? "shadow-lg ring-2 ring-primary scale-[1.03]" : "hover:shadow-md hover:scale-[1.02]"}`}
             aria-expanded={openIdx === idx}
             aria-controls={`faq-answer-${idx}`}
           >
