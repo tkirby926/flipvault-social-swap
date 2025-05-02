@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -109,7 +110,7 @@
 }
 
 .retro-title {
-  animation: retro-blink 3s infinite; /* Changed from 1.5s to 3s - half the speed */
+  animation: retro-blink 4.5s infinite; /* Changed from 3s to 4.5s - one-third of the original 1.5s speed */
   color: #1EAEDB !important;
   text-shadow: 0 0 15px #1EAEDB, 0 0 30px #1EAEDB;
   background-image: none !important;
