@@ -6,11 +6,6 @@ import { ArrowRight } from "lucide-react";
 const HeroSection = () => {
   return (
     <header className="w-full pt-24 pb-8 flex flex-col items-center relative z-[1] animate-slide-down-fade">
-      <div className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-70" 
-           style={{ backgroundImage: "url('/lovable-uploads/a7f20ec0-c2db-47d9-b8df-f214a2496e15.png')" }}>
-        <div className="absolute inset-0 bg-black/50"></div>
-      </div>
-      
       <h1 className="text-[2.2rem] md:text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text drop-shadow text-center uppercase retro-title">
         Welcome to Flipvault
       </h1>
