@@ -20,10 +20,11 @@
   }
 
   body {
-    @apply bg-black text-white font-pressstart;
+    @apply text-white font-pressstart;
     font-size: 14px;
     line-height: 1.7;
     overflow-x: hidden;
+    background-color: #000;
   }
 
   h1, h2, h3, h4 {
