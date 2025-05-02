@@ -68,25 +68,6 @@ const RetroBackground = () => {
     };
   }, []);
 
-  // Retro game sprites with better visibility
-  const retroSprites = [
-    { src: "/lovable-uploads/ab5a9bf2-e537-49e1-af36-af9eeb17e827.png", alt: "Spaceship", top: "15%", left: "8%", size: "60px", animation: "float-rotate 20s infinite linear" },
-    { src: "/lovable-uploads/9ed234f4-4ae1-42e9-b87f-9a035f88851f.png", alt: "Alien", top: "60%", right: "5%", size: "55px", animation: "float 12s infinite alternate ease-in-out" },
-    { src: "/lovable-uploads/9b00b85f-d6b8-4835-98f2-59a85954f70c.png", alt: "Game character", bottom: "10%", left: "12%", size: "65px", animation: "bounce 5s infinite alternate ease-in-out" },
-    { src: "/lovable-uploads/ab5a9bf2-e537-49e1-af36-af9eeb17e827.png", alt: "Spaceship 2", top: "75%", left: "80%", size: "50px", animation: "float 15s infinite alternate ease-in-out" },
-    { src: "/lovable-uploads/9ed234f4-4ae1-42e9-b87f-9a035f88851f.png", alt: "Alien 2", top: "25%", right: "15%", size: "45px", animation: "bounce 7s infinite alternate ease-in-out" },
-    { src: "/lovable-uploads/9b00b85f-d6b8-4835-98f2-59a85954f70c.png", alt: "Game character 2", top: "40%", left: "25%", size: "55px", animation: "float-rotate 25s infinite reverse linear" },
-    { src: "/lovable-uploads/ab5a9bf2-e537-49e1-af36-af9eeb17e827.png", alt: "Spaceship 3", bottom: "30%", right: "25%", size: "55px", animation: "bounce 10s infinite alternate ease-in-out" },
-    { src: "/lovable-uploads/9ed234f4-4ae1-42e9-b87f-9a035f88851f.png", alt: "Alien 3", top: "85%", left: "35%", size: "60px", animation: "float 17s infinite alternate ease-in-out" },
-    { src: "/lovable-uploads/9b00b85f-d6b8-4835-98f2-59a85954f70c.png", alt: "Character 3", top: "120%", right: "40%", size: "65px", animation: "bounce 14s infinite alternate ease-in-out" },
-    { src: "/lovable-uploads/ab5a9bf2-e537-49e1-af36-af9eeb17e827.png", alt: "Spaceship 4", top: "150%", left: "60%", size: "50px", animation: "float-rotate 22s infinite reverse linear" },
-    { src: "/lovable-uploads/9ed234f4-4ae1-42e9-b87f-9a035f88851f.png", alt: "Alien 4", top: "180%", right: "20%", size: "55px", animation: "float 19s infinite alternate ease-in-out" },
-    { src: "/lovable-uploads/9b00b85f-d6b8-4835-98f2-59a85954f70c.png", alt: "Character 4", top: "200%", left: "15%", size: "65px", animation: "bounce 13s infinite alternate ease-in-out" },
-    { src: "/lovable-uploads/ab5a9bf2-e537-49e1-af36-af9eeb17e827.png", alt: "Spaceship 5", top: "230%", right: "30%", size: "55px", animation: "float-rotate 24s infinite linear" },
-    { src: "/lovable-uploads/9ed234f4-4ae1-42e9-b87f-9a035f88851f.png", alt: "Alien 5", top: "260%", left: "50%", size: "50px", animation: "float 16s infinite alternate ease-in-out" },
-    { src: "/lovable-uploads/9b00b85f-d6b8-4835-98f2-59a85954f70c.png", alt: "Character 5", top: "290%", right: "10%", size: "60px", animation: "bounce 11s infinite alternate ease-in-out" },
-  ];
-
   return (
     <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
       {/* Subtle grid lines to enhance pixelated effect */}
@@ -124,28 +105,6 @@ const RetroBackground = () => {
             backgroundColor: '#FFFFFF',  // Brighter stars
             boxShadow: `0 0 ${star.size * 3}px ${star.size * 1.5}px rgba(200, 220, 255, ${star.opacity})`, // Blue-tinted glow
             animation: `pulse ${star.pulseSpeed}ms infinite alternate ease-in-out`,
-            zIndex: 0,
-          }}
-        />
-      ))}
-      
-      {/* More visible retro sprites */}
-      {retroSprites.map((sprite, index) => (
-        <img
-          key={index}
-          src={sprite.src}
-          alt={sprite.alt}
-          className="absolute transition-all duration-500"
-          style={{
-            top: sprite.top || 'auto',
-            left: sprite.left || 'auto',
-            right: sprite.right || 'auto',
-            bottom: sprite.bottom || 'auto',
-            width: sprite.size,
-            height: sprite.size,
-            opacity: 0.7, // Increased opacity
-            filter: 'brightness(1.7) contrast(1.4)', // Brighter sprites
-            animation: sprite.animation,
             zIndex: 0,
           }}
         />

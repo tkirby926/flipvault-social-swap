@@ -1,7 +1,6 @@
 
 import React from 'react';
 import Footer from "@/components/Footer";
-import BackgroundCharacters from "@/components/BackgroundCharacters";
 import RetroBackground from "@/components/RetroBackground";
 import HeroSection from "@/components/sections/HeroSection";
 import SayingsSection from "@/components/sections/SayingsSection";
@@ -13,7 +12,6 @@ import FAQSection from "@/components/sections/FAQSection";
 const Index = () => {
   return (
     <div className="font-pressstart min-h-screen w-full bg-black flex flex-col relative overflow-hidden">
-      <BackgroundCharacters />
       <RetroBackground />
       
       {/* Hero Section */}

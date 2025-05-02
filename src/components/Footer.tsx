@@ -1,6 +1,5 @@
 
 import { X, Send, Linkedin } from "lucide-react";
-import DiscordIcon from "./DiscordIcon";
 
 const socials = [
   {
@@ -8,12 +7,6 @@ const socials = [
     href: "https://x.com/flipvault",
     Icon: X,
     iconClassName: "text-white"
-  },
-  {
-    label: "Discord",
-    href: "https://discord.gg/vbwmfABK",
-    Icon: DiscordIcon,
-    iconClassName: ""
   },
   {
     label: "Telegram",
