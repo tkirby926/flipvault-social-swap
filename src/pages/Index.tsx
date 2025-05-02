@@ -7,6 +7,7 @@ import HowItWorksStep from "@/components/HowItWorksStep";
 import Footer from "@/components/Footer";
 import FAQAccordion from "@/components/FAQAccordion";
 import BackgroundCharacters from "@/components/BackgroundCharacters";
+import RetroBackground from "@/components/RetroBackground";
 import {
   ShieldCheck,
   ArrowsUpFromLine,
@@ -139,9 +140,10 @@ const Index = () => {
   return (
     <div className="font-pressstart min-h-screen w-full bg-black flex flex-col">
       <BackgroundCharacters />
+      <RetroBackground />
       {/* Hero Section */}
       <header className="w-full pt-24 pb-8 flex flex-col items-center relative z-[1] animate-slide-down-fade">
-        <h1 className="text-[2.2rem] md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-br from-[#1E90FF] to-[#0032cc] text-transparent bg-clip-text text-shadow-retro drop-shadow text-center uppercase">
+        <h1 className="text-[2.2rem] md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-br from-[#1E90FF] to-[#0032cc] text-transparent bg-clip-text text-shadow-retro drop-shadow text-center uppercase retro-title">
           Welcome to Flipvault
         </h1>
         <div className="mt-4 mb-3 text-xl md:text-2xl font-bold text-white text-center animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-[#0032cc] w-fit px-3">
