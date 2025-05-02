@@ -27,10 +27,10 @@ const RetroBackground = () => {
   
   useEffect(() => {
     // Create blinking pixels - increasing size and intensity
-    const pixels = Array.from({ length: 150 }, (_, i) => ({
+    const pixels = Array.from({ length: 250 }, (_, i) => ({
       id: i,
       x: `${Math.random() * 100}%`,
-      y: `${Math.random() * 100}%`,
+      y: `${Math.random() * 200}%`, // Doubled height to cover more vertical space
       size: Math.random() * 5 + 2, // Larger size for better visibility
       blinkSpeed: Math.random() * 2000 + 500, // Faster blinking
       color: Math.random() > 0.6 ? '#1EAEDB' : Math.random() > 0.4 ? '#8B5CF6' : '#ffffff',
@@ -40,10 +40,10 @@ const RetroBackground = () => {
     setRetroPixels(pixels);
     
     // Create pulsing stars - with higher intensity
-    const stars = Array.from({ length: 70 }, (_, i) => ({
+    const stars = Array.from({ length: 120 }, (_, i) => ({
       id: i,
       x: `${Math.random() * 100}%`,
-      y: `${Math.random() * 100}%`,
+      y: `${Math.random() * 200}%`, // Doubled height to cover more vertical space
       size: Math.random() * 8 + 4, // Larger size
       opacity: Math.random() * 0.6 + 0.5, // Higher base opacity
       pulseSpeed: Math.random() * 3000 + 1500 // Faster pulsing
@@ -78,12 +78,17 @@ const RetroBackground = () => {
     { src: "/lovable-uploads/9ed234f4-4ae1-42e9-b87f-9a035f88851f.png", alt: "Alien 2", top: "25%", right: "15%", size: "45px", animation: "bounce 7s infinite alternate ease-in-out" },
     { src: "/lovable-uploads/9b00b85f-d6b8-4835-98f2-59a85954f70c.png", alt: "Game character 2", top: "40%", left: "25%", size: "40px", animation: "float-rotate 25s infinite reverse linear" },
     { src: "/lovable-uploads/ab5a9bf2-e537-49e1-af36-af9eeb17e827.png", alt: "Spaceship 3", bottom: "30%", right: "25%", size: "45px", animation: "bounce 10s infinite alternate ease-in-out" },
+    // Add extra sprites for more coverage
+    { src: "/lovable-uploads/9ed234f4-4ae1-42e9-b87f-9a035f88851f.png", alt: "Alien 3", top: "85%", left: "35%", size: "55px", animation: "float 17s infinite alternate ease-in-out" },
+    { src: "/lovable-uploads/9b00b85f-d6b8-4835-98f2-59a85954f70c.png", alt: "Character 3", top: "120%", right: "40%", size: "60px", animation: "bounce 14s infinite alternate ease-in-out" },
+    { src: "/lovable-uploads/ab5a9bf2-e537-49e1-af36-af9eeb17e827.png", alt: "Spaceship 4", top: "150%", left: "60%", size: "50px", animation: "float-rotate 22s infinite reverse linear" },
+    { src: "/lovable-uploads/9ed234f4-4ae1-42e9-b87f-9a035f88851f.png", alt: "Alien 4", top: "180%", right: "20%", size: "45px", animation: "float 19s infinite alternate ease-in-out" },
   ];
 
   return (
     <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0" style={{ zIndex: -5 }}>
       {/* Grid lines with more opacity */}
-      <div className="absolute inset-0 grid-bg opacity-50"></div>
+      <div className="absolute inset-0 grid-bg opacity-50" style={{ height: '200vh' }}></div>
       
       {/* Blinking retro pixels with enhanced glow effect */}
       {retroPixels.map(pixel => (
