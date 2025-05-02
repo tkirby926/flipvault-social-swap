@@ -42,12 +42,12 @@
   color: #888;
 }
 
-/* Retro background styling */
+/* Retro background styling - Updated for better visibility */
 .grid-bg {
   background-size: 50px 50px;
   background-image: 
-    linear-gradient(to right, rgba(30, 174, 219, 0.2) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(30, 174, 219, 0.2) 1px, transparent 1px);
+    linear-gradient(to right, rgba(90, 174, 219, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(90, 174, 219, 0.3) 1px, transparent 1px);
 }
 
 @keyframes retro-blink {

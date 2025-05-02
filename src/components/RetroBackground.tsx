@@ -26,26 +26,26 @@ const RetroBackground = () => {
   const [retroStars, setRetroStars] = useState<RetroStar[]>([]);
   
   useEffect(() => {
-    // Create blinking pixels with more subtle effect to complement the background
+    // Create blinking pixels with more visible effect
     const pixels = Array.from({ length: 180 }, (_, i) => ({
       id: i,
       x: `${Math.random() * 100}%`,
       y: `${Math.random() * 300}%`, // Triple height to cover more vertical space
-      size: Math.random() * 4 + 2, // Smaller size for subtle effect
+      size: Math.random() * 4 + 2, 
       blinkSpeed: Math.random() * 2000 + 500,
-      color: Math.random() > 0.6 ? '#555555' : Math.random() > 0.4 ? '#888888' : '#AAAAAA',
+      color: Math.random() > 0.6 ? '#7caeff' : Math.random() > 0.4 ? '#a2c5ff' : '#d1e2ff',  // Brighter blue colors
       visible: Math.random() > 0.3
     }));
     
     setRetroPixels(pixels);
     
-    // Create pulsing stars with subtle effect
+    // Create pulsing stars with more visible effect
     const stars = Array.from({ length: 120 }, (_, i) => ({
       id: i,
       x: `${Math.random() * 100}%`,
       y: `${Math.random() * 300}%`, // Triple height to cover more vertical space
       size: Math.random() * 7 + 3,
-      opacity: Math.random() * 0.5 + 0.3, // Lower opacity for subtle effect
+      opacity: Math.random() * 0.7 + 0.3, // Higher opacity for better visibility
       pulseSpeed: Math.random() * 3000 + 1500
     }));
     
@@ -68,7 +68,7 @@ const RetroBackground = () => {
     };
   }, []);
 
-  // Create retro game sprites with subtle appearance
+  // Retro game sprites with better visibility
   const retroSprites = [
     { src: "/lovable-uploads/ab5a9bf2-e537-49e1-af36-af9eeb17e827.png", alt: "Spaceship", top: "15%", left: "8%", size: "60px", animation: "float-rotate 20s infinite linear" },
     { src: "/lovable-uploads/9ed234f4-4ae1-42e9-b87f-9a035f88851f.png", alt: "Alien", top: "60%", right: "5%", size: "55px", animation: "float 12s infinite alternate ease-in-out" },
@@ -88,7 +88,7 @@ const RetroBackground = () => {
   ];
 
   return (
-    <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0" style={{ zIndex: -5 }}>
+    <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
       {/* Subtle grid lines to enhance pixelated effect */}
       <div className="absolute inset-0 grid-bg opacity-40" style={{ height: '300vh' }}></div>
       
@@ -103,15 +103,15 @@ const RetroBackground = () => {
             width: `${pixel.size}px`, 
             height: `${pixel.size}px`,
             backgroundColor: pixel.color,
-            opacity: pixel.visible ? 0.6 : 0,
+            opacity: pixel.visible ? 0.8 : 0, // Increased opacity
             boxShadow: `0 0 ${pixel.size * 2}px ${pixel.size}px ${pixel.color}`,
             transition: "opacity 0.3s ease-in-out",
-            zIndex: -4,
+            zIndex: 0,
           }}
         />
       ))}
       
-      {/* Subtle pulsing stars */}
+      {/* More visible pulsing stars */}
       {retroStars.map(star => (
         <div 
           key={star.id} 
@@ -121,15 +121,15 @@ const RetroBackground = () => {
             left: star.x,
             width: `${star.size}px`, 
             height: `${star.size}px`,
-            backgroundColor: '#CCCCCC',
-            boxShadow: `0 0 ${star.size * 3}px ${star.size * 1.5}px rgba(200, 200, 200, ${star.opacity})`,
+            backgroundColor: '#FFFFFF',  // Brighter stars
+            boxShadow: `0 0 ${star.size * 3}px ${star.size * 1.5}px rgba(200, 220, 255, ${star.opacity})`, // Blue-tinted glow
             animation: `pulse ${star.pulseSpeed}ms infinite alternate ease-in-out`,
-            zIndex: -3,
+            zIndex: 0,
           }}
         />
       ))}
       
-      {/* Retro sprites with subtle appearance */}
+      {/* More visible retro sprites */}
       {retroSprites.map((sprite, index) => (
         <img
           key={index}
@@ -143,10 +143,10 @@ const RetroBackground = () => {
             bottom: sprite.bottom || 'auto',
             width: sprite.size,
             height: sprite.size,
-            opacity: 0.5, // Reduced opacity to be more subtle against new background
-            filter: 'brightness(1.5) contrast(1.2)', 
+            opacity: 0.7, // Increased opacity
+            filter: 'brightness(1.7) contrast(1.4)', // Brighter sprites
             animation: sprite.animation,
-            zIndex: -2,
+            zIndex: 0,
           }}
         />
       ))}
