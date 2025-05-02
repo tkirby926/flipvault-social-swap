@@ -26,12 +26,12 @@ const RetroBackground = () => {
   const [retroStars, setRetroStars] = useState<RetroStar[]>([]);
   
   useEffect(() => {
-    // Create blinking pixels - increase the number from 40 to 80
-    const pixels = Array.from({ length: 80 }, (_, i) => ({
+    // Create blinking pixels - increase the number from 80 to 120
+    const pixels = Array.from({ length: 120 }, (_, i) => ({
       id: i,
       x: `${Math.random() * 100}%`,
       y: `${Math.random() * 100}%`,
-      size: Math.random() * 3 + 1,
+      size: Math.random() * 4 + 1.5, // Increased size for better visibility
       blinkSpeed: Math.random() * 3000 + 1000,
       color: Math.random() > 0.7 ? '#1EAEDB' : Math.random() > 0.5 ? '#8B5CF6' : '#ffffff',
       visible: Math.random() > 0.5
@@ -39,13 +39,13 @@ const RetroBackground = () => {
     
     setRetroPixels(pixels);
     
-    // Create pulsing stars - increase the number from 15 to 30
-    const stars = Array.from({ length: 30 }, (_, i) => ({
+    // Create pulsing stars - increase the number from 30 to 50
+    const stars = Array.from({ length: 50 }, (_, i) => ({
       id: i,
       x: `${Math.random() * 100}%`,
       y: `${Math.random() * 100}%`,
-      size: Math.random() * 5 + 3,
-      opacity: Math.random() * 0.5 + 0.3, // Increased minimum opacity
+      size: Math.random() * 7 + 3, // Increased size
+      opacity: Math.random() * 0.5 + 0.4, // Increased opacity
       pulseSpeed: Math.random() * 4000 + 2000
     }));
     
@@ -70,18 +70,23 @@ const RetroBackground = () => {
 
   // Create retro game sprites with more visibility
   const retroSprites = [
-    { src: "/lovable-uploads/ab5a9bf2-e537-49e1-af36-af9eeb17e827.png", alt: "Spaceship", top: "15%", left: "8%", size: "50px", animation: "float-rotate 20s infinite linear" },
-    { src: "/lovable-uploads/9ed234f4-4ae1-42e9-b87f-9a035f88851f.png", alt: "Alien", top: "60%", right: "5%", size: "45px", animation: "float 12s infinite alternate ease-in-out" },
-    { src: "/lovable-uploads/9b00b85f-d6b8-4835-98f2-59a85954f70c.png", alt: "Game character", bottom: "10%", left: "12%", size: "55px", animation: "bounce 5s infinite alternate ease-in-out" },
+    { src: "/lovable-uploads/ab5a9bf2-e537-49e1-af36-af9eeb17e827.png", alt: "Spaceship", top: "15%", left: "8%", size: "60px", animation: "float-rotate 20s infinite linear" },
+    { src: "/lovable-uploads/9ed234f4-4ae1-42e9-b87f-9a035f88851f.png", alt: "Alien", top: "60%", right: "5%", size: "55px", animation: "float 12s infinite alternate ease-in-out" },
+    { src: "/lovable-uploads/9b00b85f-d6b8-4835-98f2-59a85954f70c.png", alt: "Game character", bottom: "10%", left: "12%", size: "65px", animation: "bounce 5s infinite alternate ease-in-out" },
     // Adding more sprites
-    { src: "/lovable-uploads/ab5a9bf2-e537-49e1-af36-af9eeb17e827.png", alt: "Spaceship 2", top: "75%", left: "80%", size: "40px", animation: "float 15s infinite alternate ease-in-out" },
-    { src: "/lovable-uploads/9ed234f4-4ae1-42e9-b87f-9a035f88851f.png", alt: "Alien 2", top: "25%", right: "15%", size: "35px", animation: "bounce 7s infinite alternate ease-in-out" },
+    { src: "/lovable-uploads/ab5a9bf2-e537-49e1-af36-af9eeb17e827.png", alt: "Spaceship 2", top: "75%", left: "80%", size: "50px", animation: "float 15s infinite alternate ease-in-out" },
+    { src: "/lovable-uploads/9ed234f4-4ae1-42e9-b87f-9a035f88851f.png", alt: "Alien 2", top: "25%", right: "15%", size: "45px", animation: "bounce 7s infinite alternate ease-in-out" },
+    // Adding even more sprites for better coverage
+    { src: "/lovable-uploads/9b00b85f-d6b8-4835-98f2-59a85954f70c.png", alt: "Game character 2", top: "40%", left: "25%", size: "40px", animation: "float-rotate 25s infinite reverse linear" },
+    { src: "/lovable-uploads/ab5a9bf2-e537-49e1-af36-af9eeb17e827.png", alt: "Spaceship 3", bottom: "30%", right: "25%", size: "45px", animation: "bounce 10s infinite alternate ease-in-out" },
   ];
 
+  console.log("RetroBackground rendering with pixels:", retroPixels.length, "and stars:", retroStars.length);
+
   return (
-    <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none" style={{ zIndex: -10 }}>
+    <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0" style={{ zIndex: -5 }}>
       {/* Grid lines with more opacity */}
-      <div className="absolute inset-0 grid-bg opacity-30"></div>
+      <div className="absolute inset-0 grid-bg opacity-40"></div>
       
       {/* Blinking retro pixels with more visibility */}
       {retroPixels.map(pixel => (
@@ -95,7 +100,8 @@ const RetroBackground = () => {
             height: `${pixel.size}px`,
             backgroundColor: pixel.color,
             opacity: pixel.visible ? 1 : 0,
-            boxShadow: `0 0 ${pixel.size * 2}px ${pixel.size}px ${pixel.color}`,
+            boxShadow: `0 0 ${pixel.size * 3}px ${pixel.size * 1.5}px ${pixel.color}`,
+            transition: "opacity 0.3s ease-in-out",
           }}
         />
       ))}
@@ -111,7 +117,7 @@ const RetroBackground = () => {
             width: `${star.size}px`, 
             height: `${star.size}px`,
             backgroundColor: 'white',
-            boxShadow: `0 0 ${star.size * 4}px ${star.size}px rgba(255, 255, 255, ${star.opacity})`,
+            boxShadow: `0 0 ${star.size * 5}px ${star.size * 2}px rgba(255, 255, 255, ${star.opacity})`,
             animation: `pulse ${star.pulseSpeed}ms infinite alternate ease-in-out`
           }}
         />
@@ -131,8 +137,8 @@ const RetroBackground = () => {
             bottom: sprite.bottom || 'auto',
             width: sprite.size,
             height: sprite.size,
-            opacity: 0.5, // Increased from 0.3
-            filter: 'brightness(1.5) contrast(1.2)',
+            opacity: 0.7, // Increased from 0.5
+            filter: 'brightness(1.7) contrast(1.3)', // Enhanced visibility
             animation: sprite.animation,
           }}
         />
