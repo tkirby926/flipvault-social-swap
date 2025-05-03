@@ -14,7 +14,7 @@ const SayingsSection = () => {
         {sayings.map((s, i) => (
           <div
             key={i}
-            className={`bg-white rounded-2xl shadow-xl p-6 text-base font-bold text-center text-accent drop-shadow-md animate-pop-in animation-delay-${i * 2 + 2}00`}
+            className={`bg-white rounded-2xl shadow-xl p-6 text-base font-bold text-center text-black drop-shadow-md animate-pop-in animation-delay-${i * 2 + 2}00`}
           >
             {s}
           </div>
