@@ -89,30 +89,30 @@
 @keyframes retro-blink {
   0% {
     opacity: 1;
-    text-shadow: 0 0 8px #1EAEDB, 0 0 20px #1EAEDB, 0 0 40px #1EAEDB;
+    text-shadow: 0 0 8px #0032cc, 0 0 20px #0032cc, 0 0 40px #0032cc;
   }
   25% {
     opacity: 0.7;
-    text-shadow: 0 0 4px #1EAEDB, 0 0 10px #1EAEDB;
+    text-shadow: 0 0 4px #0032cc, 0 0 10px #0032cc;
   }
   50% {
     opacity: 1;
-    text-shadow: 0 0 15px #1EAEDB, 0 0 30px #1EAEDB, 0 0 50px #1EAEDB;
+    text-shadow: 0 0 15px #0032cc, 0 0 30px #0032cc, 0 0 50px #0032cc;
   }
   75% {
     opacity: 0.8;
-    text-shadow: 0 0 5px #1EAEDB, 0 0 15px #1EAEDB;
+    text-shadow: 0 0 5px #0032cc, 0 0 15px #0032cc;
   }
   100% {
     opacity: 1;
-    text-shadow: 0 0 8px #1EAEDB, 0 0 20px #1EAEDB, 0 0 40px #1EAEDB;
+    text-shadow: 0 0 8px #0032cc, 0 0 20px #0032cc, 0 0 40px #0032cc;
   }
 }
 
 .retro-title {
   animation: retro-blink 4.5s infinite; /* Changed from 3s to 4.5s - one-third of the original 1.5s speed */
-  color: #1EAEDB !important;
-  text-shadow: 0 0 15px #1EAEDB, 0 0 30px #1EAEDB;
+  color: #0032cc !important; /* Changed from #1EAEDB to #0032cc to match button blue */
+  text-shadow: 0 0 15px #0032cc, 0 0 30px #0032cc; /* Changed shadow color to match */
   background-image: none !important;
   -webkit-text-fill-color: initial !important;
 }

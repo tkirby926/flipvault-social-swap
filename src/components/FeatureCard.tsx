@@ -54,7 +54,7 @@ const FeatureCard = ({ Icon, title, description, index }: FeatureCardProps) => {
           strokeWidth={2.7} 
         />
         <div className="flex flex-col items-center flex-grow">
-          <h4 className={`font-pressstart text-base mb-2 text-[#0032cc] drop-shadow transition-all duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}
+          <h4 className={`font-pressstart text-base mb-2 text-[#0032cc] drop-shadow transition-all duration-500 text-center ${isVisible ? "opacity-100" : "opacity-0"}`}
             style={{ transitionDelay: `${(index * 150) + 400}ms` }}
           >{title}</h4>
           <p className={`text-[12px] text-gray-800 text-center font-pressstart transition-all duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}
