@@ -5,15 +5,19 @@ import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <header className="w-full pt-24 pb-8 flex flex-col items-center relative z-[1] animate-slide-down-fade">
-      <h1 className="text-[2.2rem] md:text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text drop-shadow text-center uppercase retro-title">
-        Welcome to Flipvault
-      </h1>
-      <div className="mt-4 mb-3 text-xl md:text-2xl font-bold text-white text-center animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-[#0032cc] w-fit px-3">
+    <header className="w-full pt-12 pb-8 flex flex-col items-center relative z-[1] animate-slide-down-fade">
+      <div className="mb-6">
+        <img 
+          src="/lovable-uploads/5bc2bf9f-c272-4cfc-a600-bf338eb5c167.png" 
+          alt="Flipvault Logo" 
+          className="max-w-[80%] md:max-w-[500px] mx-auto h-auto" 
+        />
+      </div>
+      <div className="mt-2 mb-3 text-xl md:text-2xl font-bold text-white text-center animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-[#0032cc] w-fit px-3">
         Peer-to-Peer Cross-Chain Barter Trading
       </div>
-      <div className="max-w-2xl text-[14px] md:text-lg text-[#4DA6FF] text-center animate-fade-up font-pressstart mt-2 px-3 py-2 rounded">
-        Barter assets with friends and strangers across chains — just like old-school gaming, but powered by Web3
+      <div className="max-w-2xl text-[14px] md:text-lg text-white text-center animate-fade-up font-pressstart mt-2 px-3 py-2 rounded">
+        Like old-school gaming, but powered by Web3
       </div>
       
       <div className="mt-6 animate-pop-in">

@@ -39,7 +39,7 @@ const featureList = [
 
 const FeaturesSection = () => {
   return (
-    <section className="w-full px-4 md:px-0 mb-16 flex flex-col items-center">
+    <section className="w-full px-4 md:px-0 mt-12 mb-16 flex flex-col items-center">
       <h2 className="text-lg md:text-xl lg:text-2xl font-pressstart text-[#1E90FF] mb-7 mt-4 animate-slide-in-left">
         Why Flipvault?
       </h2>

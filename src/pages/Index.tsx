@@ -3,7 +3,6 @@ import React from 'react';
 import Footer from "@/components/Footer";
 import RetroBackground from "@/components/RetroBackground";
 import HeroSection from "@/components/sections/HeroSection";
-import SayingsSection from "@/components/sections/SayingsSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import ScreenshotSection from "@/components/sections/ScreenshotSection";
@@ -16,9 +15,6 @@ const Index = () => {
       
       {/* Hero Section */}
       <HeroSection />
-
-      {/* Sayings Section */}
-      <SayingsSection />
 
       {/* Feature Grid */}
       <FeaturesSection />

@@ -25,11 +25,7 @@
     font-size: 14px;
     line-height: 1.7;
     overflow-x: hidden;
-    background-color: #1e3a5f; /* Changed from #121212 to a dark blue */
-    background-image: url('/lovable-uploads/8e9d2e8e-bb74-4f34-939f-41fbe33da99f.png');
-    background-size: 400px 400px;
-    background-attachment: fixed;
-    background-position: center;
+    background-color: #1a1a2e; /* Dark blue vault-like color */
     position: relative;
   }
 
@@ -40,20 +36,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, rgba(20, 40, 70, 0.5), rgba(30, 50, 80, 0.5)); /* Changed to more transparent and blue-tinted */
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgUGJgYGBkZGBgYGVgYGAAAAAA//8DABdKAj0KGWrSAAAAAElFTkSuQmCC");
-    opacity: 0.25; /* Reduced opacity */
+    background: linear-gradient(0deg, rgba(20, 30, 50, 0.7), rgba(20, 30, 50, 0.7));
     pointer-events: none;
     z-index: -1;
   }
@@ -78,12 +61,23 @@
   .animation-delay-1000 { animation-delay: 1s; }
 }
 
-/* Retro background styling */
-.grid-bg {
-  background-size: 50px 50px;
+/* Vault background styling */
+.vault-pattern {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(50, 60, 100, 0.2) 0px,
+    rgba(50, 60, 100, 0.2) 2px,
+    transparent 2px,
+    transparent 10px
+  );
+  background-size: 20px 20px;
+}
+
+.vault-panels {
   background-image: 
-    linear-gradient(to right, rgba(60, 100, 200, 0.3) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(60, 100, 200, 0.3) 1px, transparent 1px);
+    linear-gradient(0deg, rgba(60, 70, 100, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(60, 70, 100, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
 
 @keyframes retro-blink {
@@ -110,9 +104,9 @@
 }
 
 .retro-title {
-  animation: retro-blink 4.5s infinite; /* Changed from 3s to 4.5s - one-third of the original 1.5s speed */
-  color: #0032cc !important; /* Changed from #1EAEDB to #0032cc to match button blue */
-  text-shadow: 0 0 15px #0032cc, 0 0 30px #0032cc; /* Changed shadow color to match */
+  animation: retro-blink 4.5s infinite;
+  color: #0032cc !important;
+  text-shadow: 0 0 15px #0032cc, 0 0 30px #0032cc;
   background-image: none !important;
   -webkit-text-fill-color: initial !important;
 }
