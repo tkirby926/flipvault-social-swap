@@ -68,7 +68,7 @@ const faqsQA = [
 const FAQSection = () => {
   return (
     <section className="w-full max-w-4xl mx-auto mb-20 px-4">
-      <h2 className="text-lg md:text-xl font-pressstart text-[#1E90FF] mb-5 animate-fade-up">
+      <h2 className="text-lg md:text-xl font-pressstart text-[#0032cc] mb-5 animate-fade-up">
         FAQ
       </h2>
       <FAQAccordion items={faqsQA} />

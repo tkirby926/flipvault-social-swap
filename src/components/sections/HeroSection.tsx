@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -20,7 +20,7 @@ const HeroSection = () => {
         Like old-school gaming, but powered by Web3
       </div>
       
-      <div className="mt-6 animate-pop-in">
+      <div className="mt-6 flex flex-col sm:flex-row gap-4 animate-pop-in">
         <Button 
           size="lg" 
           className="text-base font-bold bg-[#0032cc] hover:bg-[#0032cc]/90 transition-all duration-300 group"
@@ -28,6 +28,16 @@ const HeroSection = () => {
         >
           Launch Platform 
           <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+        </Button>
+        
+        <Button 
+          size="lg" 
+          variant="outline" 
+          className="text-base font-bold border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#0032cc] transition-all duration-300 group"
+          onClick={() => window.open("https://flipvault.gitbook.io/flipvault?on=docs", "_blank")}
+        >
+          See our Docs
+          <FileText className="ml-2 group-hover:scale-110 transition-transform" size={18} />
         </Button>
       </div>
     </header>
