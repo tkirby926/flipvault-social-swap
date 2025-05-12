@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -107,9 +108,9 @@
   position: absolute;
   width: 15px;
   height: 15px;
-  background-color: #0032cc;
+  background-color: #000000; /* Changed from #0032cc to black */
   border-radius: 50%;
-  box-shadow: 0 0 15px 5px rgba(0, 50, 204, 0.8);
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.8); /* Changed from blue glow to black glow */
   z-index: 5;
   top: 50%;
   left: 50%;
