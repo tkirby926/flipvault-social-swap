@@ -118,23 +118,27 @@
   -webkit-text-fill-color: initial !important;
 }
 
-/* Improved spinning dot animations with higher visibility */
-@keyframes spin-around-slow {
-  0% { transform: translateX(-50%) translateY(-150px) rotate(0deg); }
-  100% { transform: translateX(-50%) translateY(-150px) rotate(360deg); }
+/* Orbit animations for dots that circle around the vault circles */
+@keyframes orbit-slow {
+  0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(150px) rotate(360deg); }
 }
 
-@keyframes spin-around-medium {
-  0% { transform: translateX(-50%) translateY(-100px) rotate(0deg); }
-  100% { transform: translateX(-50%) translateY(-100px) rotate(360deg); }
+@keyframes orbit-medium {
+  0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(100px) rotate(360deg); }
 }
 
-@keyframes spin-around-fast {
-  0% { transform: translateX(-50%) translateY(-80px) rotate(0deg); }
-  100% { transform: translateX(-50%) translateY(-80px) rotate(360deg); }
+@keyframes orbit-fast {
+  0% { transform: rotate(0deg) translateX(75px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(75px) rotate(360deg); }
 }
 
-.spinning-dot {
+.vault-circle {
+  position: relative;
+}
+
+.orbit-dot {
   position: absolute;
   width: 15px;
   height: 15px;
@@ -142,22 +146,24 @@
   border-radius: 50%;
   left: 50%;
   top: 50%;
+  transform-origin: center;
   box-shadow: 0 0 15px 5px rgba(0, 50, 204, 0.8);
-  z-index: 5;
+  z-index: 10;
 }
 
-.spinning-dot-slow {
-  animation: spin-around-slow 20s linear infinite;
+.orbit-dot-slow {
+  animation: orbit-slow 20s linear infinite;
 }
 
-.spinning-dot-medium {
-  animation: spin-around-medium 15s linear infinite;
+.orbit-dot-medium {
+  animation: orbit-medium 15s linear infinite;
 }
 
-.spinning-dot-fast {
-  animation: spin-around-fast 10s linear infinite;
+.orbit-dot-fast {
+  animation: orbit-fast 10s linear infinite;
 }
 
+/* Keep existing animations */
 @keyframes float {
   0% {
     transform: translateY(0);
