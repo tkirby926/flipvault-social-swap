@@ -23,7 +23,7 @@ const socials = [
 ];
 
 const Footer = () => (
-  <footer className="w-full py-10 px-5 flex flex-col items-center bg-white/60 dark:bg-[#171731ad] border-t border-gray-200 dark:border-gray-700 mt-16">
+  <footer className="w-full py-10 px-5 flex flex-col items-center bg-white/80 dark:bg-[#171731dd] border-t border-gray-200 dark:border-gray-700 mt-16 relative z-10">
     <div className="flex gap-7 mb-2">
       {socials.map(({ label, href, Icon, iconClassName }) => (
         <a
@@ -46,7 +46,7 @@ const Footer = () => (
         </a>
       ))}
     </div>
-    <div className="text-gray-500 text-xs">&copy; {new Date().getFullYear()} Flipvault. All rights reserved.</div>
+    <div className="text-gray-700 font-semibold text-xs">&copy; {new Date().getFullYear()} Flipvault. All rights reserved.</div>
   </footer>
 );
 

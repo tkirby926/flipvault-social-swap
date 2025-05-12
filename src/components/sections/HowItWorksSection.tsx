@@ -28,7 +28,7 @@ const howItWorks = [
 const HowItWorksSection = () => {
   return (
     <section className="w-full max-w-5xl mx-auto mb-16 px-4">
-      <h2 className="text-lg md:text-xl lg:text-2xl font-pressstart text-[#0032cc] mb-6 mt-3 animate-slide-in-right">
+      <h2 className="text-lg md:text-xl lg:text-2xl font-pressstart text-white mb-6 mt-3 animate-slide-in-right">
         How It Works
       </h2>
       <div className="grid md:grid-cols-2 gap-10">

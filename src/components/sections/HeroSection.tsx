@@ -17,7 +17,7 @@ const HeroSection = () => {
         Peer-to-Peer Cross-Chain Barter Trading
       </div>
       <div className="max-w-2xl text-[14px] md:text-lg text-white text-center animate-fade-up font-pressstart mt-2 px-3 py-2 rounded">
-        Like old-school gaming, but powered by Web3
+        Like old-school gaming but powered by Web3
       </div>
       
       <div className="mt-6 flex flex-col sm:flex-row gap-4 animate-pop-in">
@@ -26,7 +26,7 @@ const HeroSection = () => {
           className="text-base font-bold bg-[#0032cc] hover:bg-[#0032cc]/90 transition-all duration-300 group"
           onClick={() => window.location.href = "https://flipvault.io/nft-marketplace"}
         >
-          Launch Platform 
+          Enter the Vault 
           <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
         </Button>
         

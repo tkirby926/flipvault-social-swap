@@ -61,14 +61,14 @@ const faqsQA = [
   {
     question: "Can I cancel a trade after I send it?",
     answer:
-      "You can cancel an offline trade at any time as long as the trade hasn't been accepted. You can cancel an online trade as long as both you and the other user have not confirmed the trade yet. If only one has, you can still cancel.",
+      "You can cancel an offline trade at any time as long as the trade hasn't been accepted. You can cancel a live trade as long as both you and the other user have not confirmed the trade yet. If only one has, you can still cancel.",
   },
 ];
 
 const FAQSection = () => {
   return (
     <section className="w-full max-w-4xl mx-auto mb-20 px-4">
-      <h2 className="text-lg md:text-xl font-pressstart text-[#0032cc] mb-5 animate-fade-up">
+      <h2 className="text-lg md:text-xl font-pressstart text-white mb-5 animate-fade-up">
         FAQ
       </h2>
       <FAQAccordion items={faqsQA} />

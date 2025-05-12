@@ -12,7 +12,7 @@ const ScreenshotSection = () => {
             Trading Examples
           </div>
           
-          <div className="flex flex-col md:flex-row gap-6 w-full">
+          <div className="flex flex-col md:flex-row gap-6 w-full mt-4 sm:mt-0">
             {/* First Video - Live Trading */}
             <div className="w-full md:w-1/2 flex flex-col items-center">
               <h3 className="text-center text-white mb-3 text-sm">Live Trading</h3>
@@ -45,7 +45,7 @@ const ScreenshotSection = () => {
           </div>
           
           <div className="pt-4 text-xs text-gray-300 text-center italic font-pressstart opacity-70">
-            Watch how FlipVault trading works both online and offline
+            Watch how FlipVault trading works both live and offline
           </div>
         </div>
       </div>
