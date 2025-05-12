@@ -14,19 +14,19 @@ const RetroBackground = () => {
       <div className="absolute inset-0 vault-panels opacity-75"></div>
       
       {/* Vault door circular details with spinning dots - Improved visibility */}
-      <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full border-[20px] border-[#222222] opacity-40 vault-circle">
-        <div className="orbit-dot orbit-dot-slow"></div>
+      <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full border-[20px] border-[#222222] opacity-40">
+        <div className="spinning-dot spinning-dot-slow bg-[#0032cc] z-10"></div>
       </div>
       
-      <div className="absolute bottom-1/3 right-1/4 w-[200px] h-[200px] rounded-full border-[14px] border-[#222222] opacity-35 vault-circle">
-        <div className="orbit-dot orbit-dot-medium"></div>
+      <div className="absolute bottom-1/3 right-1/4 w-[200px] h-[200px] rounded-full border-[14px] border-[#222222] opacity-35">
+        <div className="spinning-dot spinning-dot-medium bg-[#0032cc] z-10"></div>
       </div>
       
       {/* Vault lock details - More defined */}
-      <div className="absolute top-[15%] right-[20%] w-[150px] h-[150px] rounded-full border-[12px] border-[#FFFFFF] opacity-40 vault-circle">
+      <div className="absolute top-[15%] right-[20%] w-[150px] h-[150px] rounded-full border-[12px] border-[#FFFFFF] opacity-40">
         <div className="absolute inset-[20px] rounded-full border-[8px] border-[#222222]"></div>
         <div className="absolute inset-[40px] rounded-full border-[6px] border-[#FFFFFF]"></div>
-        <div className="orbit-dot orbit-dot-fast"></div>
+        <div className="spinning-dot spinning-dot-fast bg-[#0032cc] z-10"></div>
       </div>
       
       {/* Light reflections on metal - Even brighter */}
