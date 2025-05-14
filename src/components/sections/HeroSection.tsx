@@ -13,7 +13,7 @@ const HeroSection = () => {
           className="max-w-[80%] md:max-w-[500px] mx-auto h-auto" 
         />
       </div>
-      <div className="mt-2 mb-3 text-xl md:text-2xl font-bold text-white text-center animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-[#0032cc] w-fit px-3">
+      <div className="mt-2 mb-3 text-xl md:text-2xl font-bold text-white text-center animate-typewriter sm:overflow-hidden sm:whitespace-nowrap sm:border-r-2 sm:border-[#0032cc] w-fit px-3 max-w-[90%]">
         Peer-to-Peer Cross-Chain Barter Trading
       </div>
       <div className="max-w-2xl text-[14px] md:text-lg text-white text-center animate-fade-up font-pressstart mt-2 px-3 py-2 rounded">
