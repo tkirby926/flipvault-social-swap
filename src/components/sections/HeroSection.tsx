@@ -1,9 +1,32 @@
 
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, FileText } from "lucide-react";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroSection = () => {
+  const [typedText, setTypedText] = useState('');
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const textToType = "Peer-to-Peer Cross-Chain Barter Trading";
+  const typingSpeed = 80; // milliseconds per character
+  const textContainerRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const intervalId = setInterval(() => {
+      if (currentIndex < textToType.length) {
+        setTypedText(textToType.substring(0, currentIndex + 1));
+        currentIndex++;
+      } else {
+        clearInterval(intervalId);
+        setIsTypingComplete(true);
+      }
+    }, typingSpeed);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <header className="w-full pt-12 pb-8 flex flex-col items-center relative z-[1] animate-slide-down-fade">
       <div className="mb-6">
@@ -13,8 +36,18 @@ const HeroSection = () => {
           className="max-w-[80%] md:max-w-[500px] mx-auto h-auto" 
         />
       </div>
-      <div className="mt-2 mb-3 text-xl md:text-2xl font-bold text-white text-center animate-typewriter sm:overflow-hidden sm:whitespace-nowrap sm:border-r-2 sm:border-[#0032cc] w-fit px-3 max-w-[90%]">
-        Peer-to-Peer Cross-Chain Barter Trading
+      <div 
+        ref={textContainerRef}
+        className={`mt-2 mb-3 text-xl md:text-2xl font-bold text-white text-center w-fit px-3 max-w-[90%] mx-auto relative ${isTypingComplete ? 'after:animate-blink' : ''}`}
+        style={{ 
+          minHeight: isMobile ? '3.5rem' : '2.5rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >
+        <span>{typedText}</span>
+        {isTypingComplete && <span className="border-r-2 border-[#0032cc] ml-1 h-[1.2em] inline-block animate-cursor-blink"></span>}
       </div>
       <div className="max-w-2xl text-[14px] md:text-lg text-white text-center animate-fade-up font-pressstart mt-2 px-3 py-2 rounded">
         Like old-school gaming but powered by Web3
