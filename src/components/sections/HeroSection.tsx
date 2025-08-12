@@ -57,7 +57,7 @@ const HeroSection = () => {
         <Button 
           size="lg" 
           className="text-base font-bold bg-[#0032cc] hover:bg-[#0032cc]/90 transition-all duration-300 group"
-          onClick={() => window.location.href = "https://flipvault.io/nft-marketplace"}
+          onClick={() => window.location.href = "https://app.flipvault.io/nft-marketplace"}
         >
           Enter the Vault 
           <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
